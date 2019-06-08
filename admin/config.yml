@@ -14,10 +14,19 @@ collections:
     folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+    fields: # The front matter fields for each document
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Categories", name: "categories", widget: "string"}
+      - label: "Header Image" # Use this format to specify fields with nested fields
+        name: "header"
+        widget: "object" # An "object" widget is a container for widgets for nested fields
+        fields:
+          - {label: "Teaser Image", name: "teaser", widget: "image"}
+          - {label: "Detailed Image", name: "image", widget: "image", required: false}
+          - {label: "Alternative Text", name: "alt", widget: "text", required: false}
+      - {label: "Excerpt", name: "excerpt", widget: "text"} # Custom excerpt
+      - {label: "Description", name: "description", widget: "text"} # Open Graph description
+      - {label: "Featured Image", name: "og_image", widget: "image"} # Open Graph image
+      - {label: "Body", name: "body", widget: "markdown"} # Mandatory body field for markdown files
