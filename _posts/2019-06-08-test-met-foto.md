@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: default
 title: proberen
 date: 2019-05-08T07:55:22.160Z
 thumbnail: /images/uploads/kravmaga.jpg
