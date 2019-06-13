@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Harry Bannink
 author: Tamara
 date: 2019-06-13T11:40:50.231Z
